@@ -1,0 +1,18 @@
+= Wildfly
+:author: Terrence Curran
+:email: tcurran@approachingpi.com
+:revnumber: 1.0
+:revdate: Feburary 21 2017
+:version-label!:
+:sectanchors:
+:doctype: book
+:toc: left
+:toclevels: 3
+:sectnumlevels: 4
+ifdef::backend-pdf[]
+:pagenums:
+endif::[]
+
+== Architecture
+
+== Subsystems
