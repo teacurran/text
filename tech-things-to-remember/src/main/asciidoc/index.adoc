@@ -1,0 +1,93 @@
+= Tech Things To Remember
+:author: Terrence Curran
+:email: tcurran@approachingpi.com
+:revnumber: 1.0
+:revdate: Feburary 21 2017
+:version-label!:
+:sectanchors:
+:doctype: book
+:toc: left
+:toclevels: 3
+:sectnumlevels: 4
+ifdef::backend-pdf[]
+:pagenums:
+endif::[]
+
+This document will contain random Tech things I frequently forget.
+
+== DNS
+* Domains are hosted in AWS Route 53.
+* All domains are using whitelabel nameservers
+
+=== Adding a new domain
+
+Adding a new domain must be done via command line. We need to apply a custom delegation set to make sure that
+nameservers that get assigned are from the whitelabel.
+
+ aws route53 list-reusable-delegation-sets
+ aws route53 create-hosted-zone --name domain.com --delegation-set-id "/delegationset/DELEGATEID" --caller-reference "domain.com-unique-id"
+
+== OSX Commands
+=== Tunneling
+
+Tunnel IMAP
+
+ sudo ssh -i /Users/tea/.ssh/id_rsa -N tea@linear -L 143/mail.mailserver.com/143
+
+secure imap:
+
+ sudo ssh -i /Users/tea/.ssh/id_rsa -N tea@linear -L 993/imap.gmail.com/993
+
+secure pop:
+
+ sudo ssh -i /Users/tea/.ssh/id_rsa -N tea@linear -L 995/localhost/995
+
+SMTP:
+
+ sudo ssh -i /Users/tea/.ssh/id_rsa -N tea@linear -L 25/localhost/25
+
+Google Talk:
+
+ ssh -i /Users/tea/.ssh/id_rsa -N tea@linear -L 5222/talk.google.com/5222
+
+Proxy for AIM:
+
+ ssh -i /Users/tea/.ssh/id_rsa -D 3128 -N tea@cosine
+
+
+=== Port Forwarding
+
+Forwards port 3307 to port 3306 for MySQL
+
+ sudo ipfw add 3307 forward 127.0.0.1,3306 ip from any to any 3307 in
+
+=== File Operations
+
+remove .svn directories recursively
+
+ find . -name .svn -type d -exec rm -r '{}' \;
+
+Remove deleted files from SVN
+
+ svn rm $( svn status | sed -e '/^!/!d' -e 's/^!//' )
+
+
+Compare two directories. (compares current to ../lib)
+
+ find . -type f -exec cmp {} ../lib_/{} \;
+ find . -type f -exec md5 {} ../lib_/{} \;
+
+== Development
+
+=== React Native
+
+Clear Cache
+
+ watchman watch-del-all && rm -rf node_modules/ && npm cache clean && npm install && npm start -- --reset-cache
+
+
+
+
+
+
+

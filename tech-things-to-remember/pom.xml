@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.wirelust.documentation</groupId>
-	<artifactId>wildfly-notes</artifactId>
+	<artifactId>tech-notes</artifactId>
 	<version>1.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
