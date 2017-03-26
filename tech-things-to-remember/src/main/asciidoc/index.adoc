@@ -79,6 +79,24 @@ Compare two directories. (compares current to ../lib)
 
 == Development
 
+=== Apache
+
+==== Set permissions for directory:
+
+http://stackoverflow.com/questions/2001881/correct-owner-group-permissions-for-apache-2-site-files-folders-under-mac-os-x
+
+This is the most restrictive and safest way I've found, as explained here for hypothetical
+~/my/web/root/ directory for your web content:
+
+
+	For each parent directory leading to your web root (e.g. ~/my, ~/my/web, ~/my/web/root):
+		chmod go-rwx DIR (nobody other than owner can access content)
+		chmod go+x DIR (to allow "users" including _www to "enter" the dir)
+	sudo chgrp -R _www ~/my/web/root (all web content is now group _www)
+	chmod -R go-rwx ~/my/web/root (nobody other than owner can access web content)
+	chmod -R g+rx ~/my/web/root (all web content is now readable/executable/enterable by _www)
+
+
 === React Native
 
 Clear Cache
