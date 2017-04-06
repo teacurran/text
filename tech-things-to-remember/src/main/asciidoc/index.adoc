@@ -27,6 +27,12 @@ Show Hidden Files in the Finder
 
  defaults write com.apple.finder AppleShowAllFiles YES
 
+=== System Preferences
+
+Accessibility > Zoom > Use scroll gesture with modifier keys to zoom (^ control) = Checked +
+Keyboard > Key Repeat = Fast (all the way) +
+Keyboard > Delay until repeat = Slow (all the way) +
+
 == DNS
 * Domains are hosted in AWS Route 53.
 * All domains are using whitelabel nameservers
