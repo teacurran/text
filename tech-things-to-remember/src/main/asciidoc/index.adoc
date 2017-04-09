@@ -27,11 +27,18 @@ Show Hidden Files in the Finder
 
  defaults write com.apple.finder AppleShowAllFiles YES
 
+Allow Apps downloaded from = Anywhere
+
+ sudo spctl --master-disable
+
+
+
 === System Preferences
 
 Accessibility > Zoom > Use scroll gesture with modifier keys to zoom (^ control) = Checked +
 Keyboard > Key Repeat = Fast (all the way) +
 Keyboard > Delay until repeat = Slow (all the way) +
+Security & Privacy > General > Allow Apps downloaded from = Anywhere (must run terminal command above) +
 
 == DNS
 * Domains are hosted in AWS Route 53.
