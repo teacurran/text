@@ -19,9 +19,47 @@ This document will contain random Tech things I frequently forget.
 
 Required Software:
 
+=== Software
+
+==== App Store
+
 * Moom
-* Better Touch Tool
-* Arq
+* XCode
+* OmniGraffle
+
+==== Web Downloads
+
+* http://www.google.com/chrome[Chrome]
+* https://www.arqbackup.com/[Arq Backup]
+* https://www.boastr.net/[Better Touch Tool]
+* https://brew.sh/[HomeBrew]
+
+=== System Preferences
+
+==== Accessibility
+
+Zoom > Use scroll gesture with modifier keys to zoom (^ control) = Checked +
+
+==== Keyboard
+Keyboard > Key Repeat = Fast (all the way) +
+Keyboard > Delay until repeat = Slow (all the way) +
+Security & Privacy > General > Allow Apps downloaded from = Anywhere (must run terminal command above) +
+
+==== Dock
+Size = Smaller than default +
+Magnification = Smaller than default +
+Always hide and show the Dock = checked
+
+==== Mission Control
+Dashboard = As Overlay
+
+Hot Corners:
+
+* Top Left = Put Display to Sleep
+* Bottom Left = Dashboard
+* Bottom Right = Application Windows
+
+=== Advanced System Settings
 
 Show Hidden Files in the Finder
 
@@ -31,14 +69,13 @@ Allow Apps downloaded from = Anywhere
 
  sudo spctl --master-disable
 
+=== Application Preferences
 
+==== Terminal
 
-=== System Preferences
-
-Accessibility > Zoom > Use scroll gesture with modifier keys to zoom (^ control) = Checked +
-Keyboard > Key Repeat = Fast (all the way) +
-Keyboard > Delay until repeat = Slow (all the way) +
-Security & Privacy > General > Allow Apps downloaded from = Anywhere (must run terminal command above) +
+General > New window with profile = HomeBrew +
+General > New windows open with = Same Profile +
+General > New tabs open with = Same Profile, Default Working Directory
 
 == DNS
 * Domains are hosted in AWS Route 53.
