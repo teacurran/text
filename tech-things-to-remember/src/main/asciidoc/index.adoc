@@ -31,8 +31,12 @@ Required Software:
 
 * http://www.google.com/chrome[Chrome]
 * https://www.arqbackup.com/[Arq Backup]
-* https://www.boastr.net/[Better Touch Tool]
+* https://www.boastr.net/[Better Touch Tool] - maybe not needed anymore. osx seems to now default to 3 finger swipe up
+for Mission Control.
 * https://brew.sh/[HomeBrew]
+* http://drive.google.com[Google Drive]
+* https://www.jetbrains.com/toolbox/[JetBrains ToolBox]
+* http://www.adobe.com/[Adobe Creative Cloud]
 
 === System Preferences
 
@@ -68,6 +72,10 @@ Show Hidden Files in the Finder
 Allow Apps downloaded from = Anywhere
 
  sudo spctl --master-disable
+
+Stop OSX from opening windows again when restarting
+
+ defaults write -g ApplePersistence -bool no
 
 === Application Preferences
 
@@ -122,6 +130,14 @@ Proxy for AIM:
 Forwards port 3307 to port 3306 for MySQL
 
  sudo ipfw add 3307 forward 127.0.0.1,3306 ip from any to any 3307 in
+
+=== Find an open port
+
+ lsof -n -i4TCP:$PORT | grep LISTEN
+ lsof -n -iTCP:$PORT | grep LISTEN
+ lsof -n -i:$PORT | grep LISTEN
+
+from: https://stackoverflow.com/questions/4421633/who-is-listening-on-a-given-tcp-port-on-mac-os-x
 
 === File Operations
 
