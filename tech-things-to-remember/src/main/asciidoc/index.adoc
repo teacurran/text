@@ -155,6 +155,16 @@ Compare two directories. (compares current to ../lib)
  find . -type f -exec cmp {} ../lib_/{} \;
  find . -type f -exec md5 {} ../lib_/{} \;
 
+=== Git Commands
+
+Remove all local branches that have been merged
+
+  git branch --merged | egrep -v "(^\*|master|dev)" | xargs git branch -d
+
+Remove all local branches even if they have not been merged !!! UNSAFE !!!
+
+  git branch | egrep -v "(^\*|master|dev)" | xargs git branch -D
+
 == Development
 
 === Apache
